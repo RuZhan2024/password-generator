@@ -58,6 +58,8 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <shadedClassifierName>shaded</shadedClassifierName>
               <transformers>
                 <transformer>
                   <mainClass>uk.ac.gold.ade.passwordapp.PasswordApp</mainClass>
@@ -69,6 +71,14 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.6.3</version>
+        <configuration>
+          <mainClass>uk.ac.gold.ade.passwordapp.PasswordApp</mainClass>
+        </configuration>
       </plugin>
     </plugins>
   </build>
