@@ -36,7 +36,7 @@ public class PasswordApp {
             // - unknown option, or
             // - missing value for an option that needs an argument (like -l or -c),
             // - wrong format
-            System.err.println("Error" + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
             printHelp(options);
             return; // stop program
         }
@@ -57,8 +57,15 @@ public class PasswordApp {
         //
         // Extra rule: we also require length >= 8 for basic safety.
         // Your Generator methods may also have their own checks.
-        if (length < 8)
+        if (length < 0) {
             return;
+        }
+
+        if (length < 8) {
+            System.err.println("Error: length must be >= 8");
+            printHelp(options);
+            return;
+        }
 
         // Read how many passwords to generate.
         // If user did not pass -c, we use DEFAULT_COUNT (1).

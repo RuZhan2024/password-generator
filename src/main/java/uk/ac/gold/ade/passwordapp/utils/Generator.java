@@ -106,9 +106,10 @@ public class Generator {
     private int[] shuffledIndices(int length) {
         int[] idx = new int[length];
 
-        // This loop is meant to shuffle, but note:
-        // idx[] is never initialised to 0..length-1, so most values stay 0.
-        // A correct shuffle usually starts with: idx[i] = i; before swapping.
+        for (int i = 0; i < length; i++) {
+            idx[i] = i;
+        }
+
         for (int i = 0; i < length; i++) {
             int j = random.nextInt(i + 1);
             int tmp = idx[i];

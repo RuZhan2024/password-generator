@@ -1,4 +1,3 @@
-````md
 # Password Generator (Commons CLI)
 
 A command-line password generator built with **Java** and **Maven**.  
@@ -59,7 +58,7 @@ src/
       uk/ac/gold/ade/passwordapp/utils/
         GeneratorTest.java
 pom.xml
-````
+```
 
 * `PasswordApp.java` — CLI entry point (parses options + prints output)
 * `Generator.java` — generates password strings (supports strong rules)
@@ -161,5 +160,4 @@ mvn -Dtest=GeneratorTest test
 * `-c, --count <N>` — generate N passwords (default: 1)
 * `-s, --special` — allow symbols `@#$%!&*`
 * `-x, --strong` — strong mode (requires uppercase + digit + symbol; implies `--special`)
-
 

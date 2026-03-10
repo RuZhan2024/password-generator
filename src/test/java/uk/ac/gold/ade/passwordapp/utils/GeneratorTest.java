@@ -64,10 +64,13 @@ public class GeneratorTest {
     @DisplayName("generateStrong(): should contain uppercase, digit, and symbol")
     void generateStrong_shouldAcceptLengthEight_shouldContainRequiredCategories() {
         Generator generator = new Generator();
-        String password = generator.generateStrong(8);
-        assertTrue(contains(password, "[A-Z]"), "Should contain at least 1 uppercase letter");
-        assertTrue(contains(password, "[0-9]"), "Should contain at least 1 digit");
-        assertTrue(contains(password, "[@#$%!&*]"), "Should contain at least 1 symbol");
+
+        for (int i = 0; i < 100; i++) {
+            String password = generator.generateStrong(8);
+            assertTrue(contains(password, "[A-Z]"), "Should contain at least 1 uppercase letter");
+            assertTrue(contains(password, "[0-9]"), "Should contain at least 1 digit");
+            assertTrue(contains(password, "[@#$%!&*]"), "Should contain at least 1 symbol");
+        }
     }
 
     @Test
